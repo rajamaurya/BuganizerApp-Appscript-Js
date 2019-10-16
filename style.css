@@ -1,0 +1,175 @@
+<style>
+
+.checkselect1
+{
+width: 130px !important;
+ height: 40px !important;
+display: inline-block;
+}
+.checkselectemail
+{
+width: 130px !important;
+ height: 40px !important;
+display: inline-block;
+}
+
+
+html {
+  box-sizing: border-box;
+}
+*,
+*:before,
+*:after {
+  box-sizing: inherit;
+}
+.intro {
+  max-width: auto;
+  margin: 1em auto;
+}
+.table-scroll {
+  position: relative;
+  width:auto;
+  z-index: 1;
+  margin: auto;
+  overflow: auto;
+  height: auto;
+}
+.table-scroll table {
+  width: 100%;
+  min-width: auto;
+  margin: auto;
+  border-collapse: separate;
+  border-spacing: 0;
+}
+.table-wrap {
+  position: absolute;
+}
+.table-scroll th,
+.table-scroll td {
+  padding: 5px 10px;
+  border: 1px solid #000;
+  background: #fff;
+  vertical-align: top;
+}
+
+#main-table thead th{
+  background: #357ae8;
+  color: black;
+  position: sticky;
+  width:auto;
+ padding-top: 20px;
+ text-align: webkit-center;
+  
+ 
+}
+<!--
+.long{
+background: green;
+  color: blue;
+  position: fixed;
+  width: 160px;
+  overflow-x: hidden; 
+  overflow-y:auto; 
+  overflow: auto; 
+}
+.long1{
+background: chocolate;
+  color: blue;
+  position: sticky;
+  width: 160px;
+  overflow-x: hidden; 
+  overflow-y:auto; 
+  overflow: auto; 
+} -->
+.long1{
+background: #fff;
+  color: blue;
+  position: sticky;
+  width: 260px;
+  z-index: 1;
+  overflow-x: hidden; 
+  overflow-y:auto; 
+  overflow: auto; 
+}
+.col2Width{
+  -webkit-column-width: 400px; /* Chrome, Safari, Opera */
+  -moz-column-width: 400px; /* Firefox */
+  column-width: 400px;
+  width: 400px;
+
+}
+
+thead th:nth-child(-n+2) {
+  
+  position: sticky;
+  left: 0;
+  z-index: 5;
+  background: #fff;
+  padding: 10px 10px 20px 10px;
+  border: 1px solid #BFBFBF;
+  
+  box-shadow: 4px 1px 1px #aaaaaa;
+}
+tbody th:nth-child(-n+2) {
+ 
+  position: sticky;
+  left: 0;
+  z-index: 5;
+  background: #fff;
+  padding: 10px 10px 20px 10px;
+  border: 1px solid #BFBFBF;
+  
+  box-shadow: 10px 10px 5px #aaaaaa;
+}
+tbody tr td:nth-child(-n+2) {
+ 
+  position: sticky;
+  left: 0;
+  z-index: 5;
+  background: #fff;
+  padding: 10px 10px 20px 10px;
+  border: 1px solid #BFBFBF;
+  
+  box-shadow: 10px 10px 5px #aaaaaa;
+}
+
+
+@keyframes loading {
+    0% {
+        max-width: 0;
+    }
+}
+
+  
+.loader {
+ border: 16px solid #f3f3f3;
+ border-radius: 50%;
+ border-top: 16px solid #3498db;
+ width: 70px;
+ height: 70px;
+ position:fixed;
+ left: 45%;
+ top: 40%;
+ z-index: 1000;
+ -webkit-animation: spin 12s linear infinite; /* Safari */
+ animation: spin 1s linear infinite;
+     
+}
+ @-moz-keyframes spin {
+    from { -moz-transform: rotate(0deg); }
+    to { -moz-transform: rotate(360deg); }
+}
+@-webkit-keyframes spin {
+    from { -webkit-transform: rotate(0deg); }
+    to { -webkit-transform: rotate(360deg); }
+}
+@keyframes spin {
+    from {transform:rotate(0deg);}
+    to {transform:rotate(360deg);}
+}
+
+
+
+
+</style>
+
