@@ -1,0 +1,325 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <base target="_top">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+    <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/css/materialize.min.css">
+    <?!= include("table1-css"); ?>
+       <style>
+/* Absolute Center Spinner */
+h1 {
+  position: fixed;
+  z-index: 999;
+  height: 2em;
+  width: 2em;
+  overflow: visible;
+  margin: auto;
+  top: 0;
+  left: 0;
+  bottom: 0;
+  right: 0;
+}
+
+/* Transparent Overlay */
+h1:before {
+  content: 'loading';
+  display: block;
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-color: rgba(0,0,0,0.3);
+}
+
+/* :not(:required) hides these rules from IE9 and below */
+h1:not(:required) {
+  /* hide "loading..." text */
+  font: 0/0 a;
+  color: transparent;
+  text-shadow: none;
+  background-color: transparent;
+  border: 0;
+}
+
+h1:not(:required):after {
+  content: 'loading';
+  display: block;
+  font-size: 10px;
+  width: 1em;
+  height: 1em;
+  margin-top: -0.5em;
+  -webkit-animation: spinner 1500ms infinite linear;
+  -moz-animation: spinner 1500ms infinite linear;
+  -ms-animation: spinner 1500ms infinite linear;
+  -o-animation: spinner 1500ms infinite linear;
+  animation: spinner 1500ms infinite linear;
+  border-radius: 0.5em;
+  -webkit-box-shadow: rgba(0, 0, 0, 0.75) 1.5em 0 0 0, rgba(0, 0, 0, 0.75) 1.1em 1.1em 0 0, rgba(0, 0, 0, 0.75) 0 1.5em 0 0, rgba(0, 0, 0, 0.75) -1.1em 1.1em 0 0, rgba(0, 0, 0, 0.5) -1.5em 0 0 0, rgba(0, 0, 0, 0.5) -1.1em -1.1em 0 0, rgba(0, 0, 0, 0.75) 0 -1.5em 0 0, rgba(0, 0, 0, 0.75) 1.1em -1.1em 0 0;
+  box-shadow: rgba(0, 0, 0, 0.75) 1.5em 0 0 0, rgba(0, 0, 0, 0.75) 1.1em 1.1em 0 0, rgba(0, 0, 0, 0.75) 0 1.5em 0 0, rgba(0, 0, 0, 0.75) -1.1em 1.1em 0 0, rgba(0, 0, 0, 0.75) -1.5em 0 0 0, rgba(0, 0, 0, 0.75) -1.1em -1.1em 0 0, rgba(0, 0, 0, 0.75) 0 -1.5em 0 0, rgba(0, 0, 0, 0.75) 1.1em -1.1em 0 0;
+}
+
+/* Animation */
+
+@-webkit-keyframes spinner {
+  0% {
+    -webkit-transform: rotate(0deg);
+    -moz-transform: rotate(0deg);
+    -ms-transform: rotate(0deg);
+    -o-transform: rotate(0deg);
+    transform: rotate(0deg);
+  }
+  100% {
+    -webkit-transform: rotate(360deg);
+    -moz-transform: rotate(360deg);
+    -ms-transform: rotate(360deg);
+    -o-transform: rotate(360deg);
+    transform: rotate(360deg);
+  }
+}
+@-moz-keyframes spinner {
+  0% {
+    -webkit-transform: rotate(0deg);
+    -moz-transform: rotate(0deg);
+    -ms-transform: rotate(0deg);
+    -o-transform: rotate(0deg);
+    transform: rotate(0deg);
+  }
+  100% {
+    -webkit-transform: rotate(360deg);
+    -moz-transform: rotate(360deg);
+    -ms-transform: rotate(360deg);
+    -o-transform: rotate(360deg);
+    transform: rotate(360deg);
+  }
+}
+@-o-keyframes spinner {
+  0% {
+    -webkit-transform: rotate(0deg);
+    -moz-transform: rotate(0deg);
+    -ms-transform: rotate(0deg);
+    -o-transform: rotate(0deg);
+    transform: rotate(0deg);
+  }
+  100% {
+    -webkit-transform: rotate(360deg);
+    -moz-transform: rotate(360deg);
+    -ms-transform: rotate(360deg);
+    -o-transform: rotate(360deg);
+    transform: rotate(360deg);
+  }
+}
+@keyframes spinner {
+  0% {
+    -webkit-transform: rotate(0deg);
+    -moz-transform: rotate(0deg);
+    -ms-transform: rotate(0deg);
+    -o-transform: rotate(0deg);
+    transform: rotate(0deg);
+  }
+  100% {
+    -webkit-transform: rotate(360deg);
+    -moz-transform: rotate(360deg);
+    -ms-transform: rotate(360deg);
+    -o-transform: rotate(360deg);
+    transform: rotate(360deg);
+  }
+}
+    </style>
+    
+     <script>
+      function savSelectr1(event){ console.log(event.target.name)
+               
+               
+              // alert("event.target.name " + event.target.name);
+   
+               var obj1 = {
+               val: event.target.value,
+               name1: event.target.name,
+               id: event.target.id,                               //........................................... updating code  here....................
+               selectedIndex: event.target.selectedIndex
+               
+               }
+                
+                google.script.run.withSuccessHandler().getSavedDatar1(obj1);
+ //............................................................................................ adding meta data code here...
+                
+                   google.script.run.withSuccessHandler().getSavedMetaData1({
+                                     val: event.target.value,
+                                     name1: event.target.name,
+                                     id: event.target.id,
+                                     selectedIndex: event.target.selectedIndex
+                     });
+                
+                
+ ///...................................................................................................................
+               
+               
+                  }
+                  
+  class StringIdGenerator {
+    constructor(chars = 'abcdefghijklmnopqrstuvwxyz') {
+    this._chars = chars;
+    this._nextId = [0];
+  }
+
+  next() {
+    const r = [];
+    for (const char of this._nextId) {
+      r.unshift(this._chars[char]);
+    }
+    this._increment();
+    return r.join('');
+  }
+
+  _increment() {
+    for (let i = 0; i < this._nextId.length; i++) {
+      const val = ++this._nextId[i];
+      if (val >= this._chars.length) {
+        this._nextId[i] = 0;
+      } else {
+        return;
+      }
+    }
+    this._nextId.push(0);
+  }
+
+  *[Symbol.iterator]() {
+    while (true) {
+      yield this.next();
+    }
+  }
+}
+                  
+   setTimeout(function(){
+       
+    var id = document.getElementById("table-body1");
+   var row = document.createElement("tr");
+    var countse=0;
+    var counter =2
+    const ids = new StringIdGenerator(); 
+                var th;
+                 var list; google.script.run.withSuccessHandler(function(response){ 
+                  list = response;
+                  console.dir(list);
+                  console.log(" list  " + list.lastColCount);
+                  for(var i =0; i< list.lastColCount; i++){ 
+                  countse++;
+                   th = document.createElement("th");
+                   th.style.color = "blue";
+                  //th.innerHTML = "<select name=" + ids.next() + counter + " onChange='savSelectr1(event)' class= 'checkselectemail' id='rowhide"+countse+"'></select>";
+                  
+                  //-------------------------------------------------------------TO GET DATA FROM OPTION DATA-----------------------------------------------------------
+                   th.innerHTML = "<select name=" + ids.next() + counter + " onChange='savSelect1(event)' class='checkselectemail'id='rowhide"+countse+"'>" + (function() 
+                   { var str ='';
+                     var list; google.script.run.withSuccessHandler(function(response){ 
+                     list = response; console.log("response " + list + " type " + Array.isArray(list)); 
+                     console.log("data "+ list); 
+                     for(var i=0;i<list.length;i++){ 
+                        str += '<option>' +list[i]+ '</option>'; console.log("str "+ str); 
+                       }
+                    
+                       var cls_list = document.getElementsByClassName("checkselectemail"); for(var i = 0; i< cls_list.length; i++){ cls_list[i].innerHTML = '<option>Select Name</option>'+str;}
+                       }).optiondata();  
+                       })()  + "</select>";
+                       
+                  //----------------------------------------------------------END TO GET DATA FROM OPTION DATA-----------------------------------------------------------
+
+                  // th.innerText ="th";
+                   row.appendChild(th);
+               
+                  }
+                  }).getCol1();
+                    id.appendChild(row);// alert(1)
+                    
+   setTimeout(function(){
+      google.script.run.withSuccessHandler(generateTable1).getTableData1();
+
+   },4000);
+
+   
+    },0);
+
+    </script>
+    <style>
+    
+    </style>
+    
+    
+    </head>
+     <body background-image: url(https://screenshot.googleplex.com/6ZdM3M8oWRq.png);>
+         <?!= include("table1-css"); ?>
+
+  
+    <!--  <div class="container">-->
+      
+         <div id="table-scroll" class="row table-scroll" >
+           
+          <table id="main-table" class="main-table">
+          <thead>
+          <tr id="main_tr">
+             <!-- <th>Sn.no</th>
+              <th>Test Case</th>
+              <th>Name</th>-->
+              
+              
+          </tr>
+        </thead>
+
+        <tbody id="table-body1">
+             <h1 data-text="loading">&#8230;loading</h1>
+       
+        </tbody>
+      </table>
+      </div>
+ <!-- </div>-->
+ 
+     <script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/js/materialize.min.js"></script>
+        <?!= include("table1-js"); ?>
+        
+        <script type="text/javascript" language="javascript">
+        
+        //--------------Loader...............
+        
+       // var loader = document.getElementById("loader");
+         window.onload = function() {
+        // document.getElementById("main-table").style.display = "none";
+        
+         document.body.style.opacity = 0.2;
+          setTimeout(function(){
+        //  loader.style.display = 'none';
+          document.getElementsByTagName("h1")[0].style.display = "none";
+          document.body.style.opacity = 1;
+        //  document.getElementById("main-table").style.display = "block";
+         }, 16000)
+  
+        } 
+        //-----------------End of Loader.............----------
+//---------------code for dynamic lang th----------------------------------
+    var lang_counter = 1;
+    var str="";
+     var th;
+                (function() 
+                   { 
+                     var list; google.script.run.withSuccessHandler(function(response){ 
+                     list = response;  //console.log(typeof list[0][0] + Array.isArray(list[0][0]));
+                     
+                     for(var i=0;i<list.lang_list.length;i++){ 
+                        th = document.createElement("th");
+                        str = "<span class='spaner'>" +list.lang_list[i]+ '</span>'; 
+                        th.innerHTML = str;
+                        var t = document.getElementById("main_tr"); 
+                        t.appendChild(th)
+                       }
+                
+                      }).getCol1();  
+                    
+                   })();
+    </script>
+   </body>
+</html>
+
+
+
